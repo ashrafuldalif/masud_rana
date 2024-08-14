@@ -1,0 +1,261 @@
+*{
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: white;
+}
+a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+
+
+}
+.top_bar{
+    background-color: rgba(190, 95, 0, 0.783);
+    color: white;
+    margin: 0 clamp(10px,10rem + 1vw + 1.5rem + 2vw);
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 184, 107, 0.485);
+}
+.or{
+    margin: 0 0.4rem;
+}
+.name{
+    color: white;
+    margin: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    /* letter-spacing: 3px; */
+}
+.top_bar_links{
+    display: flex;
+}
+.phone_box,.address,.email_box{
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    margin: 0 1.5rem;
+}
+.phone_box a , .address a ,.email_box a{
+    margin: 0 .4rem;
+}
+.nav-links,.phone_links{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 clamp(10px,10px + 1rem + 1vw ,4rem) ;
+    transition: color 0.4s ease-in-out;
+}
+
+nav {
+  background-color: #f2f2f2;
+  overflow: hidden;
+  position: sticky ;
+  top: 0; 
+  transition: background-color 0.4s ease-in-out;
+}
+nav.scrolled{
+    background-color: rgba(255, 192, 203, 0.849);
+}
+nav.scrolled nav a {
+    color:red;
+}
+ul, ol {
+  list-style-type: none;
+}
+.nav-links span,.phone_links span {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+
+}
+ .nav_items> li {
+      font-size: 1.3rem;
+
+ }
+.nav-links span li a ,.phone_links span li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.phone_links span li a {
+    text-align: start;
+}
+.logo-container {
+    width: fit-content;
+    height: fit-content;
+    /* margin:0;
+    padding: 0; */
+}
+.nav-links span li .logo-container a{
+    padding: 0;
+    margin: 0;
+    
+}
+.logo-container img{
+    height: 4rem;
+}
+
+.sub-menu ,.sub-menu_phone{
+    display: none;
+    position: fixed;
+    background-color: #f9f9f9;
+    min-width: 110px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    /* z-index: 3; */
+    }
+
+.nav-links span li:hover .sub-menu ,.show_side_nav{
+    display: flex;
+    flex-direction: column;
+
+    }
+
+.nav-links span li .sub-menu li:hover {
+    background-color: gray;
+
+}
+.home{
+    background-image: linear-gradient(to top,red,green,blue);
+    height: 200vh;
+
+}
+
+.sub-menu li {
+  padding: 5px 15px  ; /* Adjust padding for sub-menu items as needed */
+}
+
+
+
+.nav_phone{
+    position: fixed;
+    overflow-y:auto;
+    right: 0;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(1rem);
+    width: 400px;
+    display: flex;    
+    align-items: start;
+    justify-content: start;
+    /* flex-direction: column; */
+}
+.sub-menu_phone  li{
+    border-bottom: 0.001px solid rgb(255, 242, 0);
+
+    border-radius: 1rem;
+    margin: 2px 0;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.535) ;
+    
+}
+.phone_link-items {
+    display: block;
+    align-items: start;
+    justify-content: start;
+    font-size: clamp(0.5rem + 1vw , 1rem + 0.8vw ,1.4rem);
+    text-align: start;
+    flex-direction: column;
+}
+.sub-menu_phone{
+    background-color: rgba(255, 255, 255, 0);
+    position: inherit;
+    box-shadow: none;
+    margin-left: 30px;
+
+}
+
+.sub-menu_phone li {
+    padding:  0;
+}
+.phone_links{
+    margin: 0;
+    padding: 0;
+}
+
+.phone_link-items>*{
+    padding: 0 0 0 clamp(5px ,1rem + 1vw,5rem ) ;
+    align-self: flex-start;
+}
+
+.close_nav{
+    position: relative;
+    margin-bottom: 10px;
+    left: -15px;
+    top: 15px;
+}
+.side_nav_btn {
+    display: none;
+}
+.hide{
+    display: none;
+}
+
+@media (max-width: 1250px) {
+.address{
+    display: none;
+}
+}
+@media (max-width: 1125px) {
+.phone_box{
+    display: none;
+}
+
+}
+
+@media (max-width: 788px) {
+.email_box{
+    display: none;
+}
+    .nav_items> li {
+    font-size: 1.2rem;
+
+}
+
+}
+
+@media (max-width: 740px) {
+
+
+.nav_items li{
+    display: none;
+}
+.side_nav_btn{
+    display: block;
+}
+.name{
+    font-size: 1.25rem;
+    font-weight: 550;
+}
+}
+@media (min-width:740px) {
+.nav_phone{
+    display: none;
+}
+}
+@media (max-width:400px) {
+    .nav_phone{
+        width: 88vw;
+        font-size: 1rem;
+    }
+
+}
+@media (max-width:250px) {
+    .sub-menu_phone {
+
+        font-size: 1rem;
+    }
+
+}
